@@ -5,6 +5,7 @@ import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import { UsersListingComponent } from './users-listing/users-listing.component';
 import { AddEditUserComponent } from './add-edit-user/add-edit-user.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 import { MaterialModule } from 'src/app/shared/material/material.module';
 
@@ -13,7 +14,8 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
   declarations: [
     UsersComponent,
     UsersListingComponent,
-    AddEditUserComponent
+    AddEditUserComponent,
+    UserDetailsComponent
   ],
   imports: [
     CommonModule,
