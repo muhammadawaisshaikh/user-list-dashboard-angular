@@ -6,6 +6,8 @@ import { UsersComponent } from './users.component';
 import { UsersListingComponent } from './users-listing/users-listing.component';
 import { AddEditUserComponent } from './add-edit-user/add-edit-user.component';
 
+import { MaterialModule } from 'src/app/shared/material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { AddEditUserComponent } from './add-edit-user/add-edit-user.component';
   ],
   imports: [
     CommonModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    MaterialModule
   ]
 })
 export class UsersModule { }

@@ -7,3 +7,10 @@ https://dev.to/muhammadawaisshaikh/boost-angular-s-performance-by-lazy-loading-y
 
 ## State Management in Angular using Ngrx
 https://github.com/muhammadawaisshaikh/redux-angular-ngrx/
+
+## Angular Material
+https://material.angular.io/
+
+## Angular Flex Layout
+https://github.com/angular/flex-layout
+https://tburleson-layouts-demos.firebaseapp.com/
