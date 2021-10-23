@@ -44,6 +44,7 @@ export class AddEditUserComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       personalId: ['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
       profilePhoto: ['https://i.ibb.co/2MH630J/user.png', [Validators.required]],
+      countryCode: ['', [Validators.required]],
       mobileNumber: ['', [Validators.required]],
       gender: ['male', [Validators.required]],
       street: ['', [Validators.required]],

@@ -11,6 +11,7 @@ export interface Account {
   email: string;
   personalId: number;
   profilePhoto: string;
+  countryCode: string;
   mobileNumber: string;
   gender: string;
   street: string;
@@ -31,7 +32,7 @@ export class UsersListingComponent implements OnInit {
 
   accountData: any = []
 
-  displayedColumns: string[] = ['firstName', 'lastName', 'email', 'personalId', 'profilePhoto', 'mobileNumber', 'gender', 'street', 'city', 'country', 'zipCode'];
+  displayedColumns: string[] = ['firstName', 'lastName', 'email', 'personalId', 'profilePhoto', 'countryCode', 'mobileNumber', 'gender', 'street', 'city', 'country', 'zipCode'];
   dataSource = new MatTableDataSource<Account>(this.accountData);
 
   constructor(
