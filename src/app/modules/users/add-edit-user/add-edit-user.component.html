@@ -1,24 +1,27 @@
 <div class="add-edit">
     <div fxLayout="row">
         <mat-card>
+            <div class="image-preview">
+                <img src="{{programForm.value.profilePhoto}}" alt="Preview">
+            </div>
             <form [formGroup]="programForm">
                 <mat-form-field appearance="fill">
-                    <mat-label>First Name</mat-label>
+                    <mat-label>First Name *</mat-label>
                     <input matInput formControlName="firstName">
                 </mat-form-field>
                 
                 <mat-form-field appearance="fill">
-                    <mat-label>Last Name</mat-label>
+                    <mat-label>Last Name *</mat-label>
                     <input matInput formControlName="lastName">
                 </mat-form-field>
                 
                 <mat-form-field appearance="fill">
-                    <mat-label>Email</mat-label>
+                    <mat-label>Email *</mat-label>
                     <input matInput formControlName="email">
                 </mat-form-field>
                 
                 <mat-form-field appearance="fill">
-                    <mat-label>PersonalId</mat-label>
+                    <mat-label>Personal ID *</mat-label>
                     <input matInput formControlName="personalId">
                 </mat-form-field>
                 
@@ -28,12 +31,12 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Mobile Number</mat-label>
+                    <mat-label>Mobile Number *</mat-label>
                     <input matInput formControlName="mobileNumber">
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Gender</mat-label>
+                    <mat-label>Gender *</mat-label>
                     <mat-select formControlName="gender">
                         <mat-option value="male">Male</mat-option>
                         <mat-option value="female">Female</mat-option>
@@ -61,8 +64,18 @@
                 </mat-form-field>
 
                 <div class="actions">
-                    <button mat-raised-button color="primary" (click)="onSave(programForm)">Save</button>
-                    <button mat-raised-button color="secondary" (click)="onUpdate(programForm)">Update</button>
+                    <button 
+                        mat-raised-button 
+                        color="primary" 
+                        (click)="onSave(programForm)" 
+                        [disabled]="programForm.invalid">Save
+                    </button>
+                    <button 
+                        mat-raised-button 
+                        color="secondary" 
+                        (click)="onUpdate(programForm)"
+                        [disabled]="programForm.invalid">Update
+                    </button>
                 </div>
             </form>
         </mat-card>
