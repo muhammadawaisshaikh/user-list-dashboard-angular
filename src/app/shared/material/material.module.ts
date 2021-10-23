@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule  } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [],
@@ -29,6 +30,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatToolbarModule,
   ],
   exports: [
     FlexLayoutModule,
@@ -42,6 +44,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatToolbarModule,
   ]
 })
 export class MaterialModule { }
