@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/core/http/services/users/users.service';
+import { SnackbarService } from 'src/app/shared/services/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-add-edit-user',
@@ -17,7 +18,8 @@ export class AddEditUserComponent implements OnInit {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private snackbar: SnackbarService
   ) {
     this.user = this.router.getCurrentNavigation()?.extras?.state?.user;
   }
@@ -59,10 +61,10 @@ export class AddEditUserComponent implements OnInit {
     let data = programForm.value;
     
     this.usersService.addUser(data).subscribe((res: any) => {
-      alert(res.firstName + " - New User Created");
+      this.snackbar.openSnackBar(`${res.firstName} - New User Created`, 'close');
       this.router.navigateByUrl('/users/user-listing');
     },(error) => {
-      alert('User Creation Failed!');
+      this.snackbar.openSnackBar('User Creation Failed!', 'Close');
       this.router.navigateByUrl('/users/user-listing');
     })
   }
@@ -71,20 +73,20 @@ export class AddEditUserComponent implements OnInit {
     let data = programForm.value;
     
     this.usersService.updateUser(data, this.user?.id).subscribe((res: any) => {
-      alert(res.firstName + " - User Updated");
+      this.snackbar.openSnackBar(`${res.firstName} - User Updated`, 'Close');
       this.router.navigateByUrl('/users/user-listing');
     },(error) => {
-      alert('User Updation Failed!');
+      this.snackbar.openSnackBar('User Updation Failed!', 'Close');
       this.router.navigateByUrl('/users/user-listing');
     })
   }
 
   deleteUser() {
     this.usersService.deleteUser(this.user?.id).subscribe((res: any) => {
-      alert("User Deleted");
+      this.snackbar.openSnackBar('User Deleted', 'Close');
       this.router.navigateByUrl('/users/user-listing');
     },(error) => {
-      alert('User Deletion Failed!');
+      this.snackbar.openSnackBar('User Deletion Failed!', 'Close');
       this.router.navigateByUrl('/users/user-listing');
     })
   }
