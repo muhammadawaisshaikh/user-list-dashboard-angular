@@ -15,6 +15,9 @@ export class AddEditUserComponent implements OnInit {
   user: any = {};
   isEditMode: boolean = false;
 
+  id: any = '';
+  pageUrl: any = '';
+
   constructor(
     private router: Router,
     private fb: FormBuilder,
@@ -25,6 +28,8 @@ export class AddEditUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.pageUrl = window.location.href;
+
     this.formInit();
 
     // edit mode
@@ -34,6 +39,9 @@ export class AddEditUserComponent implements OnInit {
     } else {
       this.isEditMode = false;
     }
+
+    // getting page data from API
+    this.getPageDetails();
   }
 
   formInit() {
@@ -56,6 +64,19 @@ export class AddEditUserComponent implements OnInit {
 
   randomId = () => {
     return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  }
+
+  async getPageDetails() {
+    this.id = await this.pageUrl.split('/').at(-2);
+
+    if (this.id) {
+      this.usersService.getUsers().subscribe((res: any) => {
+        this.user = res [0];
+        this.programForm.patchValue(this.user);
+      });
+    } else {
+      this.router.navigateByUrl('/users/user-listing');
+    }
   }
 
   onSave(programForm: any) {

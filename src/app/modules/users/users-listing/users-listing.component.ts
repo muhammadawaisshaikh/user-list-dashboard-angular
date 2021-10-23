@@ -65,7 +65,7 @@ export class UsersListingComponent implements OnInit {
   onViewUser(item: any) {
     console.log(item);
     
-    this.router.navigate(['/users/add-edit'], {state: {user: item}})
+    this.router.navigate(['/users/add-edit/', item.id], {state: {user: item}})
   }
 
 }
