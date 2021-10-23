@@ -1,0 +1,30 @@
+{
+    "users": [
+        {
+            "firstName": "Muhammad",
+            "lastName": "Awais",
+            "email": "awaisshaikh94@gmail.com",
+            "personalId": 11111111111,
+            "profilePhoto": "Avatar",
+            "mobileNumber": "+923312737076",
+            "gender": "Male",
+            "street": "Shalimar Banglows",
+            "city": "Karachi",
+            "country": "Pakistan",
+            "zipCode": "75290"
+        },
+        {
+            "firstName": "Ilyas",
+            "lastName": "Ahmed",
+            "email": "ilyasahmed081@gmail.com",
+            "personalId": 22222222222,
+            "profilePhoto": "Avatar",
+            "mobileNumber": "+923312737076",
+            "gender": "Male",
+            "street": "Shalimar Banglows",
+            "city": "Karachi",
+            "country": "Pakistan",
+            "zipCode": "75290"
+        }
+    ]
+}
