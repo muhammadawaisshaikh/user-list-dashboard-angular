@@ -1,1 +1,70 @@
-<p>add-edit-user works!</p>
+<div class="add-edit">
+    <div fxLayout="row">
+        <mat-card>
+            <form [formGroup]="programForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="firstName">
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput formControlName="lastName">
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email">
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>PersonalId</mat-label>
+                    <input matInput formControlName="personalId">
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>Profile Photo</mat-label>
+                    <input matInput formControlName="profilePhoto">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput formControlName="mobileNumber">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="gender">
+                        <mat-option value="male">Male</mat-option>
+                        <mat-option value="female">Female</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Street</mat-label>
+                    <input matInput formControlName="street">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input matInput formControlName="city">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <input matInput formControlName="country">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Zip Code</mat-label>
+                    <input matInput formControlName="zipCode">
+                </mat-form-field>
+
+                <div class="actions">
+                    <button mat-raised-button color="primary" (click)="onSave(programForm)">Save</button>
+                    <button mat-raised-button color="secondary" (click)="onUpdate(programForm)">Update</button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

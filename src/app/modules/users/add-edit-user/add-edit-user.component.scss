@@ -1,0 +1,13 @@
+.add-edit {
+    padding: 20px;
+    .mat-form-field { 
+        width: 48%;
+        margin: 10px;
+    }
+    .actions {
+        padding: 10px;
+        button {
+            margin-right: 20px;
+        }
+    }
+}

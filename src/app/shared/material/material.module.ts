@@ -8,7 +8,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule  } from '@angular/material/sort';
 
 @NgModule({
@@ -23,6 +25,8 @@ import { MatSortModule  } from '@angular/material/sort';
     MatPaginatorModule,
     MatInputModule,
     MatSortModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   exports: [
     FlexLayoutModule,
@@ -33,6 +37,8 @@ import { MatSortModule  } from '@angular/material/sort';
     MatPaginatorModule,
     MatInputModule,
     MatSortModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ]
 })
 export class MaterialModule { }
