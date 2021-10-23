@@ -11,15 +11,27 @@ import { UsersService } from 'src/app/core/http/services/users/users.service';
 export class AddEditUserComponent implements OnInit {
 
   programForm: any = FormGroup;
+  user: any = {};
+  isEditMode: boolean = false;
 
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private usersService: UsersService
-  ) { }
+  ) {
+    this.user = this.router.getCurrentNavigation()?.extras?.state?.user;
+  }
 
   ngOnInit(): void {
     this.formInit();
+
+    // edit mode
+    if (this.user?.id) {
+      this.programForm.patchValue(this.user);
+      this.isEditMode = true;
+    } else {
+      this.isEditMode = false;
+    }
   }
 
   formInit() {
@@ -47,8 +59,8 @@ export class AddEditUserComponent implements OnInit {
     let data = programForm.value;
     
     this.usersService.addUser(data).subscribe((res: any) => {
-      console.log(res);
-      alert(res.firstName + " - New User Created")
+      alert(res.firstName + " - New User Created");
+      this.router.navigateByUrl('/users/user-listing');
     },(error) => {
       alert('User Creation Failed!');
       this.router.navigateByUrl('/users/user-listing');
@@ -57,7 +69,24 @@ export class AddEditUserComponent implements OnInit {
 
   onUpdate(programForm: any) {
     let data = programForm.value;
-    console.log(data);
+    
+    this.usersService.updateUser(data, this.user?.id).subscribe((res: any) => {
+      alert(res.firstName + " - User Updated");
+      this.router.navigateByUrl('/users/user-listing');
+    },(error) => {
+      alert('User Updation Failed!');
+      this.router.navigateByUrl('/users/user-listing');
+    })
+  }
+
+  deleteUser() {
+    this.usersService.deleteUser(this.user?.id).subscribe((res: any) => {
+      alert("User Deleted");
+      this.router.navigateByUrl('/users/user-listing');
+    },(error) => {
+      alert('User Deletion Failed!');
+      this.router.navigateByUrl('/users/user-listing');
+    })
   }
 
 }

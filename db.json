@@ -1,20 +1,6 @@
 {
   "users": [
     {
-      "id": "c05e",
-      "firstName": "Muhammad",
-      "lastName": "Awais",
-      "email": "awaisshaikh94@gmail.com",
-      "personalId": 11111111111,
-      "profilePhoto": "https://avatars.githubusercontent.com/u/24633059",
-      "mobileNumber": "+923312737076",
-      "gender": "Male",
-      "street": "Shalimar Banglows",
-      "city": "Karachi",
-      "country": "Pakistan",
-      "zipCode": "75290"
-    },
-    {
       "id": "3c8e",
       "firstName": "Muhammad",
       "lastName": "Idrees",

@@ -1,6 +1,9 @@
 <div class="add-edit">
     <div fxLayout="row">
         <mat-card>
+            <div class="delete-user-action">
+                <button mat-raised-button color="warn" *ngIf="isEditMode" (click)="deleteUser()">Delete</button>
+            </div>
             <div class="image-preview">
                 <img src="{{programForm.value.profilePhoto}}" alt="Preview">
             </div>
@@ -65,16 +68,23 @@
 
                 <div class="actions">
                     <button 
+                        *ngIf="!isEditMode"
                         mat-raised-button 
                         color="primary" 
                         (click)="onSave(programForm)" 
                         [disabled]="programForm.invalid">Save
                     </button>
                     <button 
+                        *ngIf="isEditMode"
                         mat-raised-button 
-                        color="secondary" 
+                        color="primary" 
                         (click)="onUpdate(programForm)"
                         [disabled]="programForm.invalid">Update
+                    </button>
+                    <button
+                        mat-raised-button 
+                        color="secondary"
+                        routerLink="/users/user-listing">Cancel
                     </button>
                 </div>
             </form>

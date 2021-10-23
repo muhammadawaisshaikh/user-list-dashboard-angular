@@ -20,4 +20,12 @@ export class UsersService {
   addUser(data: any) {
     return this.http.post<any>(this.url, data);
   }
+
+  updateUser(data: any, id: any) {
+    return this.http.put<any>(`${this.url}/${id}`, data);
+  }
+
+  deleteUser(id: any) {
+    return this.http.delete<any>(`${this.url}/${id}`);
+  }
 }
