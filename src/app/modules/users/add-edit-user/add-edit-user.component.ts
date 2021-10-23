@@ -70,12 +70,13 @@ export class AddEditUserComponent implements OnInit {
     this.id = await this.pageUrl.split('/').at(-2);
 
     if (this.id) {
-      this.usersService.getUsers().subscribe((res: any) => {
+      this.usersService.getUser(this.id).subscribe((res: any) => {
         this.user = res [0];
         this.programForm.patchValue(this.user);
       });
-    } else {
-      this.router.navigateByUrl('/users/user-listing');
+    }
+    if (this.id == 0) {
+      this.programForm.reset();
     }
   }
 
