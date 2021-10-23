@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
 
+<img src="https://github.com/muhammadawaisshaikh/user-list-dashboard-angular/blob/main/demo-img.PNG" alt="Banking App Demo" style="width: 100%" />
+
 ## Live App - Deployed using Github Pages
 > https://muhammadawaisshaikh.github.io/user-list-dashboard-angular/
 
