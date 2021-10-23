@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
 
+## Setup & Run App
+1. Clone Repository
+2. npm install
+3. json-server --watch db.json
+4. npm start
+
 ## Lazy Loading - Modules
 https://dev.to/muhammadawaisshaikh/boost-angular-s-performance-by-lazy-loading-your-modules-291o
 
