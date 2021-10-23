@@ -1,0 +1,17 @@
+.listing {
+  padding: 20px;
+  table {
+    width: 100%;
+    th {
+      text-transform: capitalize;
+    }
+  }
+  .form-input {
+      padding: 20px 20px 0 20px;
+    .mat-form-field {
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+  
+}
